@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dve-pC-ZEM">
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gt0-Vj-Hbg">
+                                        <color key="backgroundColor" red="1" green="0.63380636636031951" blue="0.99311367720597865" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="单张"/>
+                                        <connections>
+                                            <action selector="pickSingle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WJ3-me-toK"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9wZ-Rc-QAu">
+                                        <color key="backgroundColor" red="0.69536865547233029" green="0.6420733268954657" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="多张"/>
+                                        <connections>
+                                            <action selector="pickMultiple:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tkg-Bt-x2i"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="4Qa-5X-cr9"/>
+                                    <constraint firstAttribute="bottom" secondItem="Gt0-Vj-Hbg" secondAttribute="bottom" id="JNL-ef-qV1"/>
+                                    <constraint firstItem="9wZ-Rc-QAu" firstAttribute="top" secondItem="Dve-pC-ZEM" secondAttribute="top" id="Jl5-Vk-xNN"/>
+                                    <constraint firstAttribute="bottom" secondItem="9wZ-Rc-QAu" secondAttribute="bottom" id="RuB-qz-hGV"/>
+                                    <constraint firstItem="9wZ-Rc-QAu" firstAttribute="leading" secondItem="Gt0-Vj-Hbg" secondAttribute="trailing" id="dh9-ev-vmh"/>
+                                    <constraint firstItem="Gt0-Vj-Hbg" firstAttribute="leading" secondItem="Dve-pC-ZEM" secondAttribute="leading" id="opG-Ri-FEm"/>
+                                    <constraint firstItem="Gt0-Vj-Hbg" firstAttribute="top" secondItem="Dve-pC-ZEM" secondAttribute="top" id="rfA-qk-tkf"/>
+                                    <constraint firstItem="Gt0-Vj-Hbg" firstAttribute="width" secondItem="9wZ-Rc-QAu" secondAttribute="width" id="sG2-Pt-ijl"/>
+                                    <constraint firstAttribute="trailing" secondItem="9wZ-Rc-QAu" secondAttribute="trailing" id="tXl-Xb-sPb"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eQ9-r5-v1h">
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_selected.png" translatesAutoresizingMaskIntoConstraints="NO" id="zU2-hY-jjB"/>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Kvb-Vk-ut9">
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="UFk-MN-eYV">
+                                            <size key="itemSize" width="50" height="50"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="BYZ-38-t0r" id="CDI-CP-DsI"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="AEq-yh-C09"/>
+                                        </connections>
+                                    </collectionView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="zU2-hY-jjB" firstAttribute="height" relation="lessThanOrEqual" secondItem="eQ9-r5-v1h" secondAttribute="height" id="92j-Gj-hg8"/>
+                                    <constraint firstItem="zU2-hY-jjB" firstAttribute="centerY" secondItem="eQ9-r5-v1h" secondAttribute="centerY" id="971-EM-hhr"/>
+                                    <constraint firstItem="zU2-hY-jjB" firstAttribute="width" relation="lessThanOrEqual" secondItem="eQ9-r5-v1h" secondAttribute="width" id="KCk-T9-rbg"/>
+                                    <constraint firstAttribute="bottom" secondItem="Kvb-Vk-ut9" secondAttribute="bottom" id="fhX-Rv-I0F"/>
+                                    <constraint firstItem="Kvb-Vk-ut9" firstAttribute="top" secondItem="eQ9-r5-v1h" secondAttribute="top" id="hqD-Qt-gFV"/>
+                                    <constraint firstItem="Kvb-Vk-ut9" firstAttribute="leading" secondItem="eQ9-r5-v1h" secondAttribute="leading" id="tq2-Ry-Zom"/>
+                                    <constraint firstItem="zU2-hY-jjB" firstAttribute="centerX" secondItem="eQ9-r5-v1h" secondAttribute="centerX" id="upD-KT-gaS"/>
+                                    <constraint firstAttribute="trailing" secondItem="Kvb-Vk-ut9" secondAttribute="trailing" id="xaa-L7-6aD"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="eQ9-r5-v1h" secondAttribute="trailing" id="MQX-OF-b2a"/>
+                            <constraint firstItem="Dve-pC-ZEM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="PBZ-qt-kD7"/>
+                            <constraint firstAttribute="trailing" secondItem="Dve-pC-ZEM" secondAttribute="trailing" id="PjH-vC-0bt"/>
+                            <constraint firstItem="eQ9-r5-v1h" firstAttribute="top" secondItem="Dve-pC-ZEM" secondAttribute="bottom" id="wi2-fE-odE"/>
+                            <constraint firstItem="Dve-pC-ZEM" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="20" id="xP2-6R-Y0v"/>
+                            <constraint firstItem="eQ9-r5-v1h" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="zhr-mc-EPY"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="eQ9-r5-v1h" secondAttribute="bottom" id="zuK-qb-Qiy"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="Kvb-Vk-ut9" id="izJ-QC-bvR"/>
+                        <outlet property="singleImageView" destination="zU2-hY-jjB" id="DM1-hC-iv1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="36" y="38.23088455772114"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="icon_selected.png" width="27" height="27"/>
+    </resources>
+</document>
