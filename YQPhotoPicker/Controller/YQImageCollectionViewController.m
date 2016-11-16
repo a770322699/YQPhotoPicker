@@ -139,6 +139,10 @@ static const NSInteger kNumberOfItemOnLine = 4;
         
         _collectionView = [[UICollectionView alloc] initWithFrame:self.view.bounds
                                              collectionViewLayout:collectionViewLayout];
+        [_collectionView registerClass:[YQImageCollectionViewCell class]
+            forCellWithReuseIdentifier:kYQImageCollectionViewCellIdentity];
+        
+        _collectionView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         _collectionView.directionalLockEnabled = YES;
         _collectionView.showsHorizontalScrollIndicator = NO;
         _collectionView.showsVerticalScrollIndicator = NO;
@@ -146,8 +150,6 @@ static const NSInteger kNumberOfItemOnLine = 4;
         _collectionView.delegate = self;
         _collectionView.alwaysBounceVertical = YES;
         _collectionView.backgroundColor = [UIColor clearColor];
-        [_collectionView registerClass:[YQImageCollectionViewCell class]
-            forCellWithReuseIdentifier:kYQImageCollectionViewCellIdentity];
     }
     return _collectionView;
 }
@@ -163,6 +165,7 @@ static const NSInteger kNumberOfItemOnLine = 4;
 - (YQSelectedImageView *)selectedView{
     if (!_selectedView) {
         _selectedView = [[YQSelectedImageView alloc] init];
+        _selectedView.backgroundColor = [UIColor whiteColor];
         _selectedView.delegate = self;
         [_selectedView.button addTarget:self action:@selector(confirm:) forControlEvents:UIControlEventTouchUpInside];
     }

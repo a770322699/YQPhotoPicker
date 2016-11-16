@@ -64,6 +64,8 @@ typedef void(^YQSaveImageToAlbumComplet)(BOOL success, PHAssetCollection *album,
 + (UIImage *)imageWithAsset:(PHAsset *)asset targetSize:(CGSize)targetSize;
 // 异步获取指定大小的图片
 + (void)requestImageWithAsset:(PHAsset *)asset targetSize:(CGSize)targetSize completion:(void (^)(UIImage *resultImage))completion;
+// 同步获取原图
++ (UIImage *)imageWithAsset:(PHAsset *)asset;
 // 异步获取原图
 + (void)requestImageWithAsset:(PHAsset *)asset completion:(void (^)(UIImage *resultImage))completion;
 

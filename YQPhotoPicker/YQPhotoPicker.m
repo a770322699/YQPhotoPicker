@@ -34,9 +34,21 @@
 
 #pragma mark - privaet
 - (void)selectSingleImageDidFinish:(YQSelectedPhoto *)selectedPhoto{
+    
+    void(^completion)() = ^{
+        YQVARSELF
+        [self.delegate yq_performSelector:@selector(photoPicker:didSelectImage:) withObjects:&yq_varSelf, &selectedPhoto, nil];
+        
+        UIViewController *picker = self.singlePickerController;
+        [self.delegate yq_performSelector:@selector(photoPicker:willDismissPickController:) withObjects:&yq_varSelf, &picker, nil];
+        [self.baseViewController dismissViewControllerAnimated:YES completion:^{
+            YQVARSELF
+            [self.delegate yq_performSelector:@selector(photoPicker:didDismissPickController:) withObjects:&yq_varSelf, &picker, nil];
+        }];
+    };
 
     if (self.customAlbumName && selectedPhoto.originalImage && !selectedPhoto.assetIdentity) {
-        __block BOOL isLoading = YES;
+        static BOOL isLoading = YES;
         
         YQLoadingView *loadingView = [[YQLoadingView alloc] init];
         loadingView.view = self.singlePickerController.view;
@@ -47,23 +59,13 @@
             }
             isLoading = NO;
             [loadingView hideAnimaition];
+            
+            completion();
         }];
         [loadingView showLoading:nil whenLoading:&isLoading];
-        
-        while (isLoading) {
-            [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate distantFuture]];
-        }
+    }else{
+        completion();
     }
-
-    YQVARSELF
-    [self.delegate yq_performSelector:@selector(photoPicker:didSelectImage:) withObjects:&yq_varSelf, &selectedPhoto, nil];
-    
-    UIViewController *picker = self.singlePickerController;
-    [self.delegate yq_performSelector:@selector(photoPicker:willDismissPickController:) withObjects:&yq_varSelf, &picker, nil];
-    [self.baseViewController dismissViewControllerAnimated:YES completion:^{
-        YQVARSELF
-        [self.delegate yq_performSelector:@selector(photoPicker:didDismissPickController:) withObjects:&yq_varSelf, &picker, nil];
-    }];
 }
 
 - (void)editSelectedImage:(YQSelectedPhoto *)selectedPhoto{
@@ -134,6 +136,16 @@
 
 // 选择多张照片
 - (void)pickMultiPhtots{
+    
+    PHAuthorizationStatus status = [PHPhotoLibrary authorizationStatus];
+    if (status == PHAuthorizationStatusRestricted ||
+        status == PHAuthorizationStatusDenied) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"您没有打开相册权限，请先在设置中打开相册访问权限！" preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil]];
+        [self.baseViewController presentViewController:alert animated:YES completion:nil];
+        return;
+    }
+    
     YQAlbumListViewController *albumController = [[YQAlbumListViewController alloc] init];
     albumController.delegate = self;
     

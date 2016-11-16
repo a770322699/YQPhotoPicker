@@ -8,7 +8,8 @@
 
 #import "YQLoadingView.h"
 
-const NSTimeInterval delayTime = 1.0;
+static const NSTimeInterval delayTime = 1.0;
+static const NSTimeInterval kAlertShowTime = 0.8;
 
 @interface YQLoadingView ()
 {
@@ -74,6 +75,7 @@ const NSTimeInterval delayTime = 1.0;
 - (void)showLoading:(NSString *)message whenLoading:(BOOL *)isLoading afterTime:(NSTimeInterval)afterTime
 {
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, afterTime * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+        
         if (*isLoading == YES) {
             [self showLoading:message];
         }
@@ -106,7 +108,7 @@ const NSTimeInterval delayTime = 1.0;
 - (void)showMessage:(NSString *)message time:(NSTimeInterval)time
 {
     [self showMessage:message];
-    [self performSelector:@selector(hideAnimaition) withObject:nil afterDelay:time ? time : delayTime];
+    [self performSelector:@selector(hideAnimaition) withObject:nil afterDelay:time ? time : kAlertShowTime];
 }
 
 - (void)showMessage:(NSString *)message
@@ -128,6 +130,18 @@ const NSTimeInterval delayTime = 1.0;
 - (void)hideAnimaition
 {
     [self hide:YES];
+}
+
+// 延时一段时间执行block
++ (void)doAction:(void (^)())action afterTime:(NSTimeInterval)afterTime
+{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, afterTime * NSEC_PER_SEC), dispatch_get_main_queue(), action);
+}
+
+// 提醒视图隐藏后执行
++ (void)doActionWhenAlertHide:(void (^) ())action
+{
+    [self doAction:action afterTime:kAlertShowTime];
 }
 
 @end

@@ -202,11 +202,26 @@
     option.synchronous = NO;
     option.resizeMode = PHImageRequestOptionsResizeModeExact;
     option.deliveryMode = PHImageRequestOptionsDeliveryModeHighQualityFormat;
-    [[PHImageManager defaultManager] requestImageForAsset:asset targetSize:targetSize contentMode:PHImageContentModeAspectFit options:option resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
+    [[PHImageManager defaultManager] requestImageForAsset:asset targetSize:targetSize contentMode:PHImageContentModeAspectFill options:option resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
         if (completion) {
             completion(result);
         }
     }];
+}
+
+// 同步获取原图
++ (UIImage *)imageWithAsset:(PHAsset *)asset{
+    __block UIImage *resultImage = nil;
+    
+    PHImageRequestOptions *option = [[PHImageRequestOptions alloc] init];
+    option.synchronous = YES;
+    option.resizeMode = PHImageRequestOptionsResizeModeNone;
+    option.deliveryMode = PHImageRequestOptionsDeliveryModeHighQualityFormat;
+    [[PHImageManager defaultManager] requestImageForAsset:asset targetSize:PHImageManagerMaximumSize contentMode:PHImageContentModeAspectFit options:option resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
+        resultImage = result;
+    }];
+    
+    return resultImage;
 }
 
 // 异步获取原图
@@ -215,7 +230,7 @@
     option.synchronous = NO;
     option.resizeMode = PHImageRequestOptionsResizeModeNone;
     option.deliveryMode = PHImageRequestOptionsDeliveryModeHighQualityFormat;
-    [[PHImageManager defaultManager] requestImageForAsset:asset targetSize:CGSizeZero contentMode:PHImageContentModeAspectFit options:option resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
+    [[PHImageManager defaultManager] requestImageForAsset:asset targetSize:PHImageManagerMaximumSize contentMode:PHImageContentModeAspectFit options:option resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
         if (completion) {
             completion(result);
         }

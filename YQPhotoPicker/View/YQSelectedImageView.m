@@ -65,6 +65,8 @@ static NSString *kCollectionViewCellReuseIdentifier = @"kCollectionViewCellReuse
         layout.itemSize = CGSizeMake(kImageSize, kImageSize);
         
         _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
+         [_collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:kCollectionViewCellReuseIdentifier];
+        
         _collectionView.directionalLockEnabled = YES;
         _collectionView.showsVerticalScrollIndicator = NO;
         _collectionView.showsHorizontalScrollIndicator = NO;
@@ -81,8 +83,6 @@ static NSString *kCollectionViewCellReuseIdentifier = @"kCollectionViewCellReuse
                                                             alpha:1].CGColor;
         _collectionView.layer.borderWidth = 1;
         _collectionView.layer.cornerRadius = 3.0;
-        
-        [_collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:kCollectionViewCellReuseIdentifier];
     }
     
     return _collectionView;

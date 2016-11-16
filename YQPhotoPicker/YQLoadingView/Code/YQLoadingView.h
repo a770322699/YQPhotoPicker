@@ -24,4 +24,9 @@
 - (void)showProgress:(double)progress message:(NSString *)message;      // 带进度
 - (void)hideAnimaition;
 
+// 延时一段时间执行block
++ (void)doAction:(void (^)())action afterTime:(NSTimeInterval)afterTime;
+// 提醒视图隐藏后执行
++ (void)doActionWhenAlertHide:(void (^) ())action;
+
 @end

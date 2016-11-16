@@ -16,7 +16,7 @@
 #import "YQPhotoManager.h"
 #import "PHAssetCollection+YQImage.h"
 
-@interface YQAlbumListViewController ()<UITableViewDelegate, UITableViewDataSource>
+@interface YQAlbumListViewController ()<UITableViewDelegate, UITableViewDataSource, PHPhotoLibraryChangeObserver>
 
 @property (nonatomic, strong) NSMutableArray *albumGroups;
 
@@ -31,6 +31,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    [[PHPhotoLibrary sharedPhotoLibrary] registerChangeObserver:self];
     
     [self building];
 }
@@ -83,12 +85,13 @@
 - (UITableView *)tableView{
     if (!_tableView) {
         _tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
+        [_tableView registerClass:[YQAlbumTableViewCell class] forCellReuseIdentifier:kAlbumTableViewCellReuseIdentity];
+        
         _tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         _tableView.separatorInset = UIEdgeInsetsZero;
         _tableView.tableFooterView = [[UIView alloc] init];
         _tableView.delegate = self;
         _tableView.dataSource = self;
-        [_tableView registerClass:[YQAlbumTableViewCell class] forCellReuseIdentifier:kAlbumTableViewCellReuseIdentity];
     }
     return _tableView;
 }
@@ -98,6 +101,14 @@
     if (self.delegate && [self.delegate respondsToSelector:@selector(cancelSelect:)]) {
         [self.delegate cancelSelect:self];
     }
+}
+
+#pragma mark - PHPhotoLibraryChangeObserver
+- (void)photoLibraryDidChange:(PHChange *)changeInstance{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self loadData];
+        [self.tableView reloadData];
+    });
 }
 
 #pragma mark - UITableViewDelegate
