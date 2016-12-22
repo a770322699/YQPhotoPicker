@@ -1,0 +1,17 @@
+PODS:
+  - YQLoadingView (1.0.0):
+    - YQLoadingView/Code (= 1.0.0)
+    - YQLoadingView/Resources (= 1.0.0)
+  - YQLoadingView/Code (1.0.0):
+    - YQLoadingView/Resources
+  - YQLoadingView/Resources (1.0.0)
+
+DEPENDENCIES:
+  - YQLoadingView
+
+SPEC CHECKSUMS:
+  YQLoadingView: 37371fcca8246ebed731d3a84fbf7ac6f419c4f0
+
+PODFILE CHECKSUM: 84da50115f1746a7fbddac3dbd563154c3f24180
+
+COCOAPODS: 1.0.1

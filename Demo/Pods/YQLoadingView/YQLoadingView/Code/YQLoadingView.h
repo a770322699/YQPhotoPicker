@@ -13,6 +13,9 @@
 @property (nonatomic, weak) UIViewController *viewController;
 @property (nonatomic, weak) UIView *view;
 
+@property (nonatomic, strong) UIImage *successIcon;
+@property (nonatomic, strong) UIImage *failIcon;
+
 - (void)showFail:(NSString *)message;
 - (void)showSuccess:(NSString *)message;
 // 在1秒后加载

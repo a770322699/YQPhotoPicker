@@ -1,0 +1,1 @@
+../../../YQLoadingView/YQLoadingView/Resources/YQLoadingViewResourceManager.h

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A06C6E007871663BDCC03551 /* libPods-Demo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D4E1B31C53FA2FCFE85B0658 /* libPods-Demo.a */; };
 		D8301C201D7921B7004A8EBA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D8301C1F1D7921B7004A8EBA /* main.m */; };
 		D8301C231D7921B7004A8EBA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D8301C221D7921B7004A8EBA /* AppDelegate.m */; };
 		D8301C261D7921B7004A8EBA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8301C251D7921B7004A8EBA /* ViewController.m */; };
@@ -34,18 +35,13 @@
 		D84F3CD51DADECF3004F3775 /* UIImage+addition.m in Sources */ = {isa = PBXBuildFile; fileRef = D84F3CAF1DADECF3004F3775 /* UIImage+addition.m */; };
 		D84F3CD61DADECF3004F3775 /* YQEditImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D84F3CB11DADECF3004F3775 /* YQEditImageViewController.m */; };
 		D84F3CD71DADECF3004F3775 /* YQEditSelectImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = D84F3CB31DADECF3004F3775 /* YQEditSelectImageView.m */; };
-		D84F3CD81DADECF3004F3775 /* YQLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = D84F3CB71DADECF3004F3775 /* YQLoadingView.m */; };
-		D84F3CD91DADECF3004F3775 /* YQProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = D84F3CB91DADECF3004F3775 /* YQProgressHUD.m */; };
-		D84F3CDA1DADECF3004F3775 /* img_loading_error.png in Resources */ = {isa = PBXBuildFile; fileRef = D84F3CBB1DADECF3004F3775 /* img_loading_error.png */; };
-		D84F3CDB1DADECF3004F3775 /* img_loading_error@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D84F3CBC1DADECF3004F3775 /* img_loading_error@2x.png */; };
-		D84F3CDC1DADECF3004F3775 /* img_loading_error@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D84F3CBD1DADECF3004F3775 /* img_loading_error@3x.png */; };
-		D84F3CDD1DADECF3004F3775 /* img_loading_success.png in Resources */ = {isa = PBXBuildFile; fileRef = D84F3CBE1DADECF3004F3775 /* img_loading_success.png */; };
-		D84F3CDE1DADECF3004F3775 /* img_loading_success@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D84F3CBF1DADECF3004F3775 /* img_loading_success@2x.png */; };
-		D84F3CDF1DADECF3004F3775 /* img_loading_success@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D84F3CC01DADECF3004F3775 /* img_loading_success@3x.png */; };
 		D84F3CE01DADECF3004F3775 /* YQPhotoPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = D84F3CC21DADECF3004F3775 /* YQPhotoPicker.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6C35FF2D5BFE8C86E0C3CD5F /* Pods-Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Demo/Pods-Demo.debug.xcconfig"; sourceTree = "<group>"; };
+		A6883A071717E8C28A634FDA /* Pods-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Demo/Pods-Demo.release.xcconfig"; sourceTree = "<group>"; };
+		D4E1B31C53FA2FCFE85B0658 /* libPods-Demo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Demo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8301C1B1D7921B7004A8EBA /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8301C1F1D7921B7004A8EBA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D8301C211D7921B7004A8EBA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -96,16 +92,6 @@
 		D84F3CB11DADECF3004F3775 /* YQEditImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQEditImageViewController.m; sourceTree = "<group>"; };
 		D84F3CB21DADECF3004F3775 /* YQEditSelectImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQEditSelectImageView.h; sourceTree = "<group>"; };
 		D84F3CB31DADECF3004F3775 /* YQEditSelectImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQEditSelectImageView.m; sourceTree = "<group>"; };
-		D84F3CB61DADECF3004F3775 /* YQLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQLoadingView.h; sourceTree = "<group>"; };
-		D84F3CB71DADECF3004F3775 /* YQLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQLoadingView.m; sourceTree = "<group>"; };
-		D84F3CB81DADECF3004F3775 /* YQProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQProgressHUD.h; sourceTree = "<group>"; };
-		D84F3CB91DADECF3004F3775 /* YQProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQProgressHUD.m; sourceTree = "<group>"; };
-		D84F3CBB1DADECF3004F3775 /* img_loading_error.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_loading_error.png; sourceTree = "<group>"; };
-		D84F3CBC1DADECF3004F3775 /* img_loading_error@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_loading_error@2x.png"; sourceTree = "<group>"; };
-		D84F3CBD1DADECF3004F3775 /* img_loading_error@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_loading_error@3x.png"; sourceTree = "<group>"; };
-		D84F3CBE1DADECF3004F3775 /* img_loading_success.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_loading_success.png; sourceTree = "<group>"; };
-		D84F3CBF1DADECF3004F3775 /* img_loading_success@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_loading_success@2x.png"; sourceTree = "<group>"; };
-		D84F3CC01DADECF3004F3775 /* img_loading_success@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_loading_success@3x.png"; sourceTree = "<group>"; };
 		D84F3CC11DADECF3004F3775 /* YQPhotoPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQPhotoPicker.h; sourceTree = "<group>"; };
 		D84F3CC21DADECF3004F3775 /* YQPhotoPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQPhotoPicker.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -115,17 +101,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A06C6E007871663BDCC03551 /* libPods-Demo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BE465AE6613D3929E4DBEDE2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D4E1B31C53FA2FCFE85B0658 /* libPods-Demo.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D5697D3DFABADCB5A28B26EA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6C35FF2D5BFE8C86E0C3CD5F /* Pods-Demo.debug.xcconfig */,
+				A6883A071717E8C28A634FDA /* Pods-Demo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		D8301C121D7921B7004A8EBA = {
 			isa = PBXGroup;
 			children = (
 				D8301C1D1D7921B7004A8EBA /* Demo */,
 				D8301C1C1D7921B7004A8EBA /* Products */,
+				D5697D3DFABADCB5A28B26EA /* Pods */,
+				BE465AE6613D3929E4DBEDE2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -174,7 +180,6 @@
 				D84F3CA11DADECF3004F3775 /* SelectManager */,
 				D84F3CA41DADECF3004F3775 /* View */,
 				D84F3CAD1DADECF3004F3775 /* YQImageEditor */,
-				D84F3CB41DADECF3004F3775 /* YQLoadingView */,
 				D84F3CC11DADECF3004F3775 /* YQPhotoPicker.h */,
 				D84F3CC21DADECF3004F3775 /* YQPhotoPicker.m */,
 			);
@@ -285,39 +290,6 @@
 			path = YQImageEditor;
 			sourceTree = "<group>";
 		};
-		D84F3CB41DADECF3004F3775 /* YQLoadingView */ = {
-			isa = PBXGroup;
-			children = (
-				D84F3CB51DADECF3004F3775 /* Code */,
-				D84F3CBA1DADECF3004F3775 /* Resources */,
-			);
-			path = YQLoadingView;
-			sourceTree = "<group>";
-		};
-		D84F3CB51DADECF3004F3775 /* Code */ = {
-			isa = PBXGroup;
-			children = (
-				D84F3CB61DADECF3004F3775 /* YQLoadingView.h */,
-				D84F3CB71DADECF3004F3775 /* YQLoadingView.m */,
-				D84F3CB81DADECF3004F3775 /* YQProgressHUD.h */,
-				D84F3CB91DADECF3004F3775 /* YQProgressHUD.m */,
-			);
-			path = Code;
-			sourceTree = "<group>";
-		};
-		D84F3CBA1DADECF3004F3775 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				D84F3CBB1DADECF3004F3775 /* img_loading_error.png */,
-				D84F3CBC1DADECF3004F3775 /* img_loading_error@2x.png */,
-				D84F3CBD1DADECF3004F3775 /* img_loading_error@3x.png */,
-				D84F3CBE1DADECF3004F3775 /* img_loading_success.png */,
-				D84F3CBF1DADECF3004F3775 /* img_loading_success@2x.png */,
-				D84F3CC01DADECF3004F3775 /* img_loading_success@3x.png */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -325,9 +297,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D8301C321D7921B7004A8EBA /* Build configuration list for PBXNativeTarget "Demo" */;
 			buildPhases = (
+				BB61F729AA750206FD87D225 /* [CP] Check Pods Manifest.lock */,
 				D8301C171D7921B7004A8EBA /* Sources */,
 				D8301C181D7921B7004A8EBA /* Frameworks */,
 				D8301C191D7921B7004A8EBA /* Resources */,
+				6E4E58F7A518C959280732DD /* [CP] Embed Pods Frameworks */,
+				3573097EF096FF455C153A77 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -377,22 +352,64 @@
 			files = (
 				D84F3CCE1DADECF3004F3775 /* yq_back@2x.png in Resources */,
 				D8301C2E1D7921B7004A8EBA /* LaunchScreen.storyboard in Resources */,
-				D84F3CDF1DADECF3004F3775 /* img_loading_success@3x.png in Resources */,
 				D84F3CCD1DADECF3004F3775 /* photoPickerPlaceholder@2x.png in Resources */,
 				D84F3CCC1DADECF3004F3775 /* icon_unselected@2x.png in Resources */,
 				D8301C2B1D7921B7004A8EBA /* Assets.xcassets in Resources */,
-				D84F3CDC1DADECF3004F3775 /* img_loading_error@3x.png in Resources */,
 				D84F3CCB1DADECF3004F3775 /* icon_selected@2x.png in Resources */,
-				D84F3CDB1DADECF3004F3775 /* img_loading_error@2x.png in Resources */,
-				D84F3CDE1DADECF3004F3775 /* img_loading_success@2x.png in Resources */,
-				D84F3CDD1DADECF3004F3775 /* img_loading_success.png in Resources */,
 				D84F3CCF1DADECF3004F3775 /* yq_back@3x.png in Resources */,
 				D8301C291D7921B7004A8EBA /* Main.storyboard in Resources */,
-				D84F3CDA1DADECF3004F3775 /* img_loading_error.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3573097EF096FF455C153A77 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Demo/Pods-Demo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6E4E58F7A518C959280732DD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Demo/Pods-Demo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BB61F729AA750206FD87D225 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D8301C171D7921B7004A8EBA /* Sources */ = {
@@ -402,7 +419,6 @@
 				D84F3CC31DADECF3004F3775 /* YQAlbumListViewController.m in Sources */,
 				D84F3CD41DADECF3004F3775 /* YQSelectedImageView.m in Sources */,
 				D84F3CD01DADECF3004F3775 /* YQSelectManager.m in Sources */,
-				D84F3CD91DADECF3004F3775 /* YQProgressHUD.m in Sources */,
 				D84F3CE01DADECF3004F3775 /* YQPhotoPicker.m in Sources */,
 				D84F3CD11DADECF3004F3775 /* YQAlbumTableViewCell.m in Sources */,
 				D84F3CD61DADECF3004F3775 /* YQEditImageViewController.m in Sources */,
@@ -410,7 +426,6 @@
 				D84F3CD31DADECF3004F3775 /* YQImageView.m in Sources */,
 				D84F3CC71DADECF3004F3775 /* UIView+YQProperty.m in Sources */,
 				D8301C261D7921B7004A8EBA /* ViewController.m in Sources */,
-				D84F3CD81DADECF3004F3775 /* YQLoadingView.m in Sources */,
 				D84F3CC51DADECF3004F3775 /* NSObject+YQDelegate.m in Sources */,
 				D84F3CD21DADECF3004F3775 /* YQImageCollectionViewCell.m in Sources */,
 				D8301C231D7921B7004A8EBA /* AppDelegate.m in Sources */,
@@ -532,6 +547,7 @@
 		};
 		D8301C331D7921B7004A8EBA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6C35FF2D5BFE8C86E0C3CD5F /* Pods-Demo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Demo/Info.plist;
@@ -544,6 +560,7 @@
 		};
 		D8301C341D7921B7004A8EBA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A6883A071717E8C28A634FDA /* Pods-Demo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Demo/Info.plist;
